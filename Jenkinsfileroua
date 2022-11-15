@@ -6,6 +6,7 @@ pipeline {
 			echo 'Pulling...';
 			 git branch: 'roua',
 			 url : 'https://github.com/roua05/DevRoua.git',
+			 credentialsId:'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';
 		
 			  }
 		  }
