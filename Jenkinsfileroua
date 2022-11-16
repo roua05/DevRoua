@@ -12,7 +12,7 @@ pipeline {
 		  }
 		  stage('maven clean') {
 		 steps {
-			sh 'mvn clean'
+			sh 'mvn -B -DskipTests clean
 			  }
 		  }
 		stage('maven package') {
