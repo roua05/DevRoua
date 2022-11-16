@@ -38,7 +38,7 @@ pipeline {
 		  stage('SonarQube') {
 		 steps {
 			sh " mvn sonar:sonar -Dsonar.projectKey=token -Dsonar.host.url=http://192.168.100.189:9000   -Dsonar.login=d26c73909cb4f24d583419d1650c3dfaf5d7affd"
-			 }
+			
 			
 			  }
 		  }
