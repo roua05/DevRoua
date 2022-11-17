@@ -50,7 +50,34 @@ pipeline {
 
 }                }
 			  }
-}			
-			 
+}
+
+
+stage("Create Docker Image") {
+            steps {
+                script {
+                   sh 'docker build -t rouahub/spring:latest .'
+                }
+            }
+        }			
+		
+
+stage("Login to DockerHub") {
+                steps{
+
+                    sh 'docker login -u rouahub -p rouaabir1234'
+                }
+        }	 
+
+
+stage("pushing image to docker hub") { 
+             steps { 
+                 script { 
+       sh 'docker push rouahub/spring:latest'
+                        
+                    
+                 } 
+             } 
+         }
 }
 }
