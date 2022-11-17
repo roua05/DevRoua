@@ -43,11 +43,14 @@ pipeline {
 			  }
 		  }
 		stage('Nexus') {
-		 steps {
-			sh 'mvn deploy -DskipTests'
+		         steps {
+                script {
+                configFileProvider([configFile(fileId: 'deploymentRepo', variable: 'setting')]) {
+                    sh 'mvn  -B -DskipTests deploy -s $setting'
+
+}                }
 			  }
-			  }
-			
+}			
 			 
 }
 }
