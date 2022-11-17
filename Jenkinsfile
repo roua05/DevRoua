@@ -79,5 +79,15 @@ stage("pushing image to docker hub") {
                  } 
              } 
          }
+
+
+stage("Docker compose") {
+            steps {
+                script {
+                   sh 'docker-compose up -d'
+                }
+            }
+         }
+
 }
 }
